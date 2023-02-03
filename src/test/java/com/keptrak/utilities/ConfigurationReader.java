@@ -11,7 +11,7 @@ public class ConfigurationReader {
     }
 
 
-    static Properties properties = new Properties();
+    private static Properties properties = new Properties();
 
 
     static {
