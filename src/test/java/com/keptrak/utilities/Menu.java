@@ -6,16 +6,13 @@ public class Menu {
 
     public static void main(String[] args) {
 
-        String path = System.getProperty("user.dir")+"/src/test/resources/Environments"+ConfigurationReader.getProperties("environment")+".properties";
+     Driver.get().get(Environment.URL);
 
-        System.out.println(path);
 
-        String environment = ConfigurationReader.getProperties("environment");
+        for (int i = 0; i < 20; i++) {
 
-        String path2 = System.getProperty("user.dir")+"/src/test/resources/Environments" + environment + ".properties";
+            System.out.println("Kerem OZTURK BURADA");
 
-        System.out.println(path2);
-        System.out.println(Environment.URL);
-
+        }
     }
 }
