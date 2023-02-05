@@ -6,13 +6,11 @@ public class Menu {
 
     public static void main(String[] args) {
 
-     Driver.get().get(Environment.URL);
+        Driver2.get().get("https://www.google.com");
+        Driver2.closeDriver();
+        Driver.get().get("https://www.bbc.com");
+        Driver.closeDriver();
 
 
-        for (int i = 0; i < 20; i++) {
-
-            System.out.println("Kerem OZTURK BURADA");
-
-        }
     }
 }
