@@ -1,5 +1,6 @@
-package com.keptrak.utilities;
+package com.keptrak.step_definitions;
 
+import com.keptrak.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
 import org.junit.AfterClass;
@@ -13,15 +14,15 @@ public class Hooks {
 
         if (scenario.isFailed()){
 
-            byte [] screenshot = ((TakesScreenshot)Driver.get()).getScreenshotAs(OutputType.BYTES);
+            byte [] screenshot = ((TakesScreenshot) Driver.get()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot,"image/png",scenario.getName());
         }
 
-        System.out.println("ittakimasssss");
+
 
     }
 
-    @AfterClass
+    @After
     public static void teardown(){
         Driver.closeDriver();
     }
