@@ -62,11 +62,7 @@
             <version>1.7.32</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>1.7.32</version>
-        </dependency>
+
 
     </dependencies>
 
@@ -81,8 +77,8 @@
         <version>3.0.0-M5</version>
         <configuration>
             <parallel>methods</parallel>
-            <useUnlimitedThreads>true</useUnlimitedThreads>
-             <!-- <threadCount>1</threadCount> -->
+           <!-- <useUnlimitedThreads>true</useUnlimitedThreads>-->
+              <threadCount>4</threadCount>
              <testFailureIgnore>true</testFailureIgnore>
             <runOrder>Alphabetical</runOrder>
             <includes>

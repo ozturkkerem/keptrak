@@ -1,12 +1,12 @@
 com\keptrak\pages\Dashboard.class
 com\keptrak\runners\FailedTestRunner.class
 com\keptrak\utilities\ConfigurationReader.class
+com\keptrak\step_definitions\FleetStepDefinitions.class
 com\keptrak\runners\CukesRunner.class
 com\keptrak\utilities\Driver2.class
 com\keptrak\utilities\Menu.class
-com\keptrak\utilities\Hooks.class
+com\keptrak\step_definitions\Hooks.class
 com\keptrak\utilities\Environment.class
 com\keptrak\pages\BasePage.class
 com\keptrak\utilities\BrowserUtilities.class
-com\keptrak\step_definitions\Fleet.class
 com\keptrak\utilities\Driver.class

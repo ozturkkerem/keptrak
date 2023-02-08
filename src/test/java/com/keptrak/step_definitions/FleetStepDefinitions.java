@@ -38,6 +38,10 @@ public class FleetStepDefinitions {
         basePage.usernameInput.sendKeys(Environment.STORE_MAN_USER);
         basePage.passwordInput.sendKeys(Environment.STORE_MAN_PASS);
         basePage.loginButton.click();
+        WebDriverWait wait = new WebDriverWait(Driver.get(),5);
+        wait.until(ExpectedConditions.invisibilityOf(dashboard.waitingLine));
+
+
 
     }
 
@@ -147,11 +151,11 @@ public class FleetStepDefinitions {
 
     @When("User click to pinbar")
     public void user_click_to_pinbar() {
-        WebDriverWait wait = new WebDriverWait(Driver.get(),5);
-        wait.until(ExpectedConditions.visibilityOf(dashboard.pinBar));
+        WebDriverWait wait = new WebDriverWait(Driver.get(),10);
+
         Actions actions = new Actions(Driver.get());
         actions.moveToElement(dashboard.pinBar).perform();
-
+        wait.until(ExpectedConditions.elementToBeClickable(dashboard.pinBar));
 
         dashboard.pinBar.click();
     }
@@ -314,9 +318,10 @@ public class FleetStepDefinitions {
     public void click_the_calendar_events_under_the_activities() {
 
         Actions actions = new Actions(Driver.get());
-        BrowserUtilities.waitMethod(1);
+        BrowserUtilities.waitMethod(2);
         actions.moveToElement(dashboard.activities).perform();
-        BrowserUtilities.waitMethod(1);
+        BrowserUtilities.waitMethod(2);
+        actions.moveToElement(dashboard.calender).perform();
         dashboard.calender.click();
 
 

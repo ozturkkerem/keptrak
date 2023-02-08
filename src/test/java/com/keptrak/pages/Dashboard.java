@@ -119,6 +119,9 @@ public class Dashboard {
     @FindBy(name = "(//input[@class='recurrence-subview-control__number'])[1]")
     public WebElement repeatNumber;
 
+    @FindBy (className="loader-mask")
+    public WebElement waitingLine;
+
 
 
 
