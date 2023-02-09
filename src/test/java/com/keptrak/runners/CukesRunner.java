@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         glue = "com/keptrak/step_definitions",
         features = "src/test/resources/features",
         dryRun = false,
-        tags = ""
+        tags = "@wip"
 
 
 )

@@ -90,11 +90,11 @@ Feature:Fleet management
     And Check any car’s checkbox
     And  Verify the box is checked
 
-  @wip
+
   Scenario:  As a user, I want to create a recurring(repetitive) calendar event.
     When Store and sales manager login
-    When Click the “Calendar Events” under the Activities
-    And  Click the “Create Calendar Event” button
+    When Click the Calendar Events under the Activities.
+    And  Click the Create Calendar Event button.
     And Check the Repeat checkbox
     And Verify the repeat number is One
 

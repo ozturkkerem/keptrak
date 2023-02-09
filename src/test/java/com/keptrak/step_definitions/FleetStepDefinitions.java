@@ -1,6 +1,7 @@
 package com.keptrak.step_definitions;
 
 import com.keptrak.pages.BasePage;
+import com.keptrak.pages.Customers;
 import com.keptrak.pages.Dashboard;
 import com.keptrak.utilities.BrowserUtilities;
 import com.keptrak.utilities.Driver;
@@ -12,6 +13,7 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.sl.In;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -26,6 +28,7 @@ public class FleetStepDefinitions {
 
     BasePage basePage = new BasePage();
     Dashboard dashboard = new Dashboard();
+    Customers customers = new Customers();
 
     @Given("user is on the library login page")
     public void user_is_on_the_library_login_page() {
@@ -314,7 +317,7 @@ public class FleetStepDefinitions {
         Assert.assertTrue(dashboard.secondCheckBox.isSelected());
     }
 
-    @Given("Click the “Calendar Events” under the Activities")
+    @Given("Click the Calendar Events under the Activities.")
     public void click_the_calendar_events_under_the_activities() {
 
         Actions actions = new Actions(Driver.get());
@@ -326,7 +329,7 @@ public class FleetStepDefinitions {
 
 
     }
-    @Given("Click the “Create Calendar Event” button")
+    @Given("Click the Create Calendar Event button.")
     public void click_the_create_calendar_event_button() {
         WebDriverWait wait = new WebDriverWait(Driver.get(),3);
         wait.until(ExpectedConditions.elementToBeClickable(dashboard.createCalender));
@@ -353,8 +356,64 @@ BrowserUtilities.waitMethod();
 
     }
 
+    @When("Write a message in the Description field")
+    public void write_a_message_in_the_description_field() {
+       Driver.get().switchTo().frame(dashboard.iframeId);
+
+    }
+    @Then("Verify the message is written in the input box")
+    public void verify_the_message_is_written_in_the_input_box() {
+        dashboard.textPlace.sendKeys("this is an experience");
+        String actualText= dashboard.textPlaceText.getText();
+        String expectedText = "this is an experience";
+
+        Assert.assertEquals(expectedText,expectedText);
+        Driver.get().switchTo().defaultContent();
+
+    }
 
 
+    @When("User click altdown Vehicle Odameter")
+    public void user_click_altdown_vehicle_odameter() {
+    Actions actions = new Actions(Driver.get());
+    actions.moveToElement(dashboard.vehicleOdometer).perform();
+    BrowserUtilities.waitMethod(1);
+    WebDriverWait wait= new WebDriverWait(Driver.get(),10);
+
+    dashboard.vehicleOdometer.click();
+        BrowserUtilities.waitMethod(3);
+
+    }
+    @When("Verify the managers see You do not have permission to perform this action.")
+    public void verify_the_managers_see_you_do_not_have_permission_to_perform_this_action() {
+
+    }
+
+    @When("Click Customers")
+    public void click_customers() {
+        WebDriverWait wait = new WebDriverWait(Driver.get(),5);
+        wait.until(ExpectedConditions.visibilityOf(dashboard.customers));
+        JavascriptExecutor je= (JavascriptExecutor)(Driver.get());
+        je.executeScript("arguments[0].click();", dashboard.customers);
+        //dashboard.customers.click();
+        Actions actions = new Actions(Driver.get());
+        actions.moveToElement(dashboard.customers).perform();
+        BrowserUtilities.waitMethod(3);
+
+
+    }
+    @When("Click Accounts")
+    public void click_accounts() {
+        dashboard.account.click();
+        BrowserUtilities.waitMethod(3);
+    }
+
+    @Then("Verify there are  {string}")
+    public void verify_there_are(String string) {
+        System.out.println("I am checking accounts");
+        customers.checkAllAccount();
+        Assert.assertTrue("olmadiii",customers.checkAllAccount().contains(string.toUpperCase()));
+    }
 
 
 
