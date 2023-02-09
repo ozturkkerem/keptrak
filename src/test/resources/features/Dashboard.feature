@@ -34,6 +34,4 @@ Feature: Dashboard
       | Created At     |
       | Updated At     |
 
-    @wip
-    Scenario: us jsexecuter
-      When I do bbc do something
+
