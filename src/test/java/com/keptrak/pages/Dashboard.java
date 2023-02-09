@@ -1,6 +1,7 @@
 package com.keptrak.pages;
 
 import com.keptrak.utilities.Driver;
+import io.cucumber.java.en.And;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindAll;
@@ -8,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.Calendar;
 import java.util.List;
 
 public class Dashboard {
@@ -62,8 +64,6 @@ public class Dashboard {
     public WebElement dropdownVehicle;
 
 
-
-
     @FindBy(xpath = "//div[@class='dropdown']/a")
     public WebElement threeDots;
 
@@ -72,23 +72,19 @@ public class Dashboard {
     public WebElement threeDots3;
 
 
-
     @FindBy(xpath = "//i[@class='fa-eye hide-text']")
     public WebElement threeDotsEyes;
-
 
 
     @FindBy(xpath = "//i[@class='fa-eye hide-text']")
     public WebElement threeDotsPencil;
 
 
-
     @FindBy(xpath = "(//i[@class='fa-trash-o hide-text'])[3]")
     public WebElement threeDotsTrash;
 
     @FindBy(xpath = "//td/input")
-    public List <WebElement>  inputCheckBox;
-
+    public List<WebElement> inputCheckBox;
 
 
     @FindBy(xpath = "(//th//input[@type='checkbox'])[1]")
@@ -111,7 +107,6 @@ public class Dashboard {
     public WebElement createCalender;
 
 
-
     @FindBy(xpath = "//input[@id='recurrence-repeat-view556']")
     public WebElement repeat;
 
@@ -119,18 +114,28 @@ public class Dashboard {
     @FindBy(name = "(//input[@class='recurrence-subview-control__number'])[1]")
     public WebElement repeatNumber;
 
-    @FindBy (className="loader-mask")
+    @FindBy(className = "loader-mask")
     public WebElement waitingLine;
 
 
+    @FindBy(xpath = "//iframe[contains(@id,'oro_calendar_event_form_description-uid-63e42')]")
+    public WebElement iframeId;
+
+    @FindBy(id = "tinymce")
+    public WebElement textPlace;
+
+    @FindBy(xpath = "//body[@id='tinymce']/p")
+    public WebElement textPlaceText;
 
 
+    @FindBy(xpath = "//span[text()='Vehicle Odometer']")
+    public WebElement vehicleOdometer;
 
+    @FindBy(xpath = "//span[contains(text(),'Customers')][1]")
+    public WebElement customers;
 
-
-
-
-
+    @FindBy(xpath = "//span[text()='Accounts'][1]")
+    public WebElement account;
 
 
 }
