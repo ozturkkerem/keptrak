@@ -1,16 +1,28 @@
 -------------------------------------------------------------------------------
 Test set: Fleet management
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 17.79 s <<< FAILURE! - in Fleet management
-Fleet management.As a user, I want to create a recurring(repetitive) calendar event.  Time elapsed: 17.79 s  <<< ERROR!
+Tests run: 10, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 108.721 s <<< FAILURE! - in Fleet management
+Fleet management.As a user, I should be to select any vehicle from the Vehicle page(web-table)  Time elapsed: 9.276 s  <<< ERROR!
 io.cucumber.junit.UndefinedStepException: 
-The step 'Click the “Create Calendar Event” button' is undefined.
+The step 'Check any car’s checkbox' is undefined.
 You can implement this step using the snippet(s) below:
 
-@When("Click the “Create Calendar Event” button")
-public void click_the_create_calendar_event_button() {
+@When("Check any car’s checkbox")
+public void check_any_car_s_checkbox() {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }
 
+
+Fleet management.As a user, I want to create a recurring(repetitive) calendar event.  Time elapsed: 20.312 s  <<< ERROR!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='recurrence-repeat-view556']"}
+  (Session info: headless chrome=109.0.5414.120)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-6T4640F', ip: '192.168.0.11', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\oztur\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56312}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 2a742526e5b948f2ad8ca9e31538f63c
+*** Element info: {Using=xpath, value=//input[@id='recurrence-repeat-view556']}
 

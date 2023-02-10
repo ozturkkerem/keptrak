@@ -307,6 +307,7 @@ public class FleetStepDefinitions {
 
     @When("Check any car’s checkbox")
     public void check_any_car_s_checkbox() {
+        BrowserUtilities.waitMethod();
         dashboard.firstCheckBox.click();
         BrowserUtilities.waitMethod();
         dashboard.secondCheckBox.click();
@@ -358,6 +359,7 @@ BrowserUtilities.waitMethod();
 
     @When("Write a message in the Description field")
     public void write_a_message_in_the_description_field() {
+        BrowserUtilities.waitMethod(1);
        Driver.get().switchTo().frame(dashboard.iframeId);
 
     }

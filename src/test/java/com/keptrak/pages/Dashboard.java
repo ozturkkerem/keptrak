@@ -107,7 +107,7 @@ public class Dashboard {
     public WebElement createCalender;
 
 
-    @FindBy(xpath = "//input[@id='recurrence-repeat-view556']")
+    @FindBy(xpath = "//input[contains(@id,'recurrence-repeat-view')]")
     public WebElement repeat;
 
 
@@ -118,7 +118,7 @@ public class Dashboard {
     public WebElement waitingLine;
 
 
-    @FindBy(xpath = "//iframe[contains(@id,'oro_calendar_event_form_description-uid-63e42')]")
+    @FindBy(xpath = "//iframe[contains(@id,'oro_calendar_event_form_description-uid-63e')]")
     public WebElement iframeId;
 
     @FindBy(id = "tinymce")
